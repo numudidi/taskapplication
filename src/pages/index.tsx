@@ -4,7 +4,6 @@ import axios, { AxiosResponse } from "axios";
 import Link from "next/link";
 import { useState } from "react";
 import Cookies from "js-cookie";
-import { error } from "console";
 
 const Home = () => {
   const [toggleLogin, setToggleLogin] = useState<boolean>(true);
