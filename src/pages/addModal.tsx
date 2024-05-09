@@ -48,6 +48,13 @@ const AddTaskModal = ({ onClose }: { onClose: () => void }) => {
       });
   };
 
+  const borderColorClass =
+    description.length === 0
+      ? "border-gray-300"
+      : description.length <= 30
+      ? "border-green-500"
+      : "border-red-500";
+
   return (
     <div className="z-50 fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
       <div className="w-1/2 flex flex-col">
@@ -103,7 +110,7 @@ const AddTaskModal = ({ onClose }: { onClose: () => void }) => {
               <div className="flex flex-col gap-2 w-full">
                 <label className="font-semibold">Description</label>
                 <textarea
-                  className={`bg-[#F6F6F6] rounded-md px-4 py-2`}
+                  className={`bg-[#F6F6F6] rounded-md px-4 py-2 focus:outline-none border border-solid ${borderColorClass}`}
                   placeholder="Add description"
                   rows={3}
                   onChange={(e) => setDescription(e.target.value)}
